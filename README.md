@@ -54,9 +54,12 @@ Basic usage looks like this:
     $rpc = new \GameNet\Jabber\RpcClient([
         'server' => 'http://127.0.0.1:4560',
         'host' => 'j.gamenet.ru',
+<<<<<<< HEAD
         'authServer' => "j.gamenet.ru",
         'authName' => "adminAccount",
         'authPassword' => "******",
+=======
+>>>>>>> 813f320d50423c80b461bc5e01de1cc65699204d
         'debug' => false,
     ]);
 
