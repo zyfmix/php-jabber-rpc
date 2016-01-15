@@ -59,6 +59,8 @@ class RpcClient
 
     protected $host;
 
+    protected $authAdmin;// = ['user' => 'zyf', 'server' => 'coopens.com', 'password' => '123456'];
+
     public function __construct(array $options)
     {
         if (!isset($options['server'])) {
@@ -69,7 +71,6 @@ class RpcClient
             throw new \InvalidArgumentException("Parameter 'host' is not specified");
         }
 
-<<<<<<< HEAD
         if (!isset($options['authServer'])) {
             throw new \InvalidArgumentException("Parameter 'authServer' is not specified");
         }
@@ -89,20 +90,12 @@ class RpcClient
             'user' => $options['authName'],
             'password' => $options['authPassword']
         );
-=======
-        $this->server = $options['server'];
-        $this->host = $options['host'];
->>>>>>> 813f320d50423c80b461bc5e01de1cc65699204d
         $this->debug = isset($options['debug']) ? (bool)$options['debug'] : false;
     }
 
     protected function sendRequest($command, array $params)
     {
-<<<<<<< HEAD
         $request = xmlrpc_encode_request($command, [$this->authAdmin, $params], ['encoding' => 'utf-8', 'escaping' => 'markup']);
-=======
-        $request = xmlrpc_encode_request($command, $params, ['encoding' => 'utf-8', 'escaping' => 'markup']);
->>>>>>> 813f320d50423c80b461bc5e01de1cc65699204d
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->server);
